@@ -1,0 +1,9 @@
+R:\NURE\Practice\FigureMoving\FigureMoving\bin\Debug\FigureMoving.exe.config
+R:\NURE\Practice\FigureMoving\FigureMoving\bin\Debug\FigureMoving.exe
+R:\NURE\Practice\FigureMoving\FigureMoving\bin\Debug\FigureMoving.pdb
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.csprojResolveAssemblyReference.cache
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.FigureMovingForm.resources
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.Properties.Resources.resources
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.csproj.GenerateResource.Cache
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.exe
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.pdb
