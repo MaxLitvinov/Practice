@@ -6,3 +6,4 @@ R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.Properties.Res
 R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.csproj.GenerateResource.Cache
 R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.exe
 R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.pdb
+R:\NURE\Practice\FigureMoving\FigureMoving\obj\Debug\FigureMoving.csprojResolveAssemblyReference.cache

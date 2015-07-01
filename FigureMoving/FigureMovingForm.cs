@@ -14,6 +14,8 @@ namespace FigureMoving
 {
     public partial class FigureMovingForm : Form
     {
+        private List<Figure> figureList;
+
         bool circleFlag = false;
         bool triangleFlag = false;
         bool rectangleFlag = false;
@@ -21,6 +23,7 @@ namespace FigureMoving
         public FigureMovingForm()
         {
             InitializeComponent();
+            figureList = new List<Figure>();
         }
 
         private void circleButton_Click(object sender, EventArgs e)
@@ -58,18 +61,24 @@ namespace FigureMoving
                 Graphics graphics = e.Graphics;
                 Figure circle = new Circle();
                 circle.Draw(graphics);
+                figureTreeView.Nodes.Add(circle.GetType().Name.ToString());
+                circleFlag = false;
             } 
-            if (triangleFlag)
+            else if (triangleFlag)
             {
                 Graphics graphics = e.Graphics;
                 Figure triangle = new Triangle();
                 triangle.Draw(graphics);
+                figureTreeView.Nodes.Add(triangle.GetType().Name.ToString());
+                triangleFlag = false;
             }
-            if (rectangleFlag)
+            else if (rectangleFlag)
             {
                 Graphics graphics = e.Graphics;
                 Figure rectangle = new Rectangle();
                 rectangle.Draw(graphics);
+                figureTreeView.Nodes.Add(rectangle.GetType().Name.ToString());
+                rectangleFlag = false;
             }
         }
     }
