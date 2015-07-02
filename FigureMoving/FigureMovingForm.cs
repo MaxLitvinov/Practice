@@ -16,44 +16,58 @@ namespace FigureMoving
     {
         private List<Figure> figureList;
 
-        bool move = false;
+        private bool move = false;
+
+        private Random random;
 
         public FigureMovingForm()
         {
             InitializeComponent();
             figureList = new List<Figure>();
+            random = new Random();
         }
 
         private void circleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure circle = new Circle(0, 0, 50);
+            float radius = random.Next(10, 50);
+            float x = random.Next(0, pictureBox.Width - (int)radius);
+            float y = random.Next(0, pictureBox.Height - (int)radius);
+            Figure circle = new Circle(x, y, radius);
             figureList.Add(circle);
-            circle.Draw(graphics);
             figureTreeView.Nodes.Add(circle.GetType().Name.ToString());
+            circle.Draw(graphics);
+
         }
 
         private void triangleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure triangle = new Triangle(0, 0, 50, 50);
+            float width = random.Next(50, 100);
+            float height = random.Next(50, 100);
+            float x = random.Next(0, pictureBox.Width - (int)width);
+            float y = random.Next(0, pictureBox.Height - (int)height);
+            Figure triangle = new Triangle(x, y, width, height);
             figureList.Add(triangle);
-            triangle.Draw(graphics);
             figureTreeView.Nodes.Add(triangle.GetType().Name.ToString());
+            triangle.Draw(graphics);
         }
 
         private void rectangleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure rectangle = new Rectangle(0, 0, 50, 50);
+            float width = random.Next(10, 50);
+            float height = random.Next(10, 50);
+            float x = random.Next(0, pictureBox.Width - (int)width);
+            float y =  random.Next(0, pictureBox.Height - (int)height);
+            Figure rectangle = new Rectangle(x, y, width, height);
             figureList.Add(rectangle);
-            rectangle.Draw(graphics);
             figureTreeView.Nodes.Add(rectangle.GetType().Name.ToString());
+            rectangle.Draw(graphics);
         }
 
         private void moveButton_Click(object sender, EventArgs e)
         {
-            move = true;
         }
 
         private void figureTreeView_AfterSelect(object sender, TreeViewEventArgs e)

@@ -13,12 +13,14 @@ namespace FigureMoving
         float x;
         float y;
         float radius;
+        PointF center;
 
         public Circle(float x, float y, float radius)
         {
             this.x = x;
             this.y = y;
             this.radius = radius;
+            this.center = new PointF(this.x + this.radius, this.y + this.radius);
         }
 
         public override void Draw(Graphics graphics)

@@ -157,6 +157,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Figure Moving";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.buttonPanel.ResumeLayout(false);
             this.treeViewPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();

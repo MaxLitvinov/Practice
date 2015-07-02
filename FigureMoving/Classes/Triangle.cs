@@ -26,13 +26,9 @@ namespace FigureMoving.Classes
         public override void Draw(Graphics graphics)
         {
             Pen pen = new Pen(new SolidBrush(Color.Blue), 3);
-            PointF[] points = {
-                                  new PointF(0, this.height),
-                                  new PointF(this.foundation, this.height),
-                                  new PointF(this.foundation / 2, 0),
-                                  new PointF(0, this.height)
-                              };
-            graphics.DrawLines(pen, points);
+            graphics.DrawLine(pen, this.x, this.y + this.height, this.x + this.foundation, this.y + this.height);
+            graphics.DrawLine(pen, this.x, this.y + this.height, this.x + this.foundation / 2, this.y);
+            graphics.DrawLine(pen, this.x + this.foundation / 2, this.y, this.x + this.foundation, this.y + this.height);
         }
 
         public override void Move(PictureBox pictureBox)
