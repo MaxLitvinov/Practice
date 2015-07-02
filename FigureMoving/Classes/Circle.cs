@@ -15,6 +15,8 @@ namespace FigureMoving
         float radius;
         PointF center;
 
+        float step = 3F;
+
         public Circle(float x, float y, float radius)
         {
             this.x = x;
@@ -34,7 +36,9 @@ namespace FigureMoving
 
         public override void Move(PictureBox pictureBox)
         {
-
+            this.x += step;
+            this.y += step;
+            Draw(pictureBox.CreateGraphics());
         }
     }
 }

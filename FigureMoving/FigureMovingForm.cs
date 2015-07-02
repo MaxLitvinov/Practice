@@ -15,9 +15,7 @@ namespace FigureMoving
     public partial class FigureMovingForm : Form
     {
         private List<Figure> figureList;
-
-        private bool move = false;
-
+        
         private Random random;
 
         public FigureMovingForm()
@@ -37,7 +35,6 @@ namespace FigureMoving
             figureList.Add(circle);
             figureTreeView.Nodes.Add(circle.GetType().Name.ToString());
             circle.Draw(graphics);
-
         }
 
         private void triangleButton_Click(object sender, EventArgs e)
@@ -68,6 +65,8 @@ namespace FigureMoving
 
         private void moveButton_Click(object sender, EventArgs e)
         {
+            timer.Enabled = true;
+            moveButton.Text = "Stop";
         }
 
         private void figureTreeView_AfterSelect(object sender, TreeViewEventArgs e)
@@ -77,13 +76,31 @@ namespace FigureMoving
 
         private void pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            if (move)
+            if (timer.Enabled)
             {
-                foreach (var figure in figureList)
-                {
-                    figure.Draw(e.Graphics);
-                }
+                Graphics graphics = pictureBox.CreateGraphics();
+                graphics.Clear(pictureBox.BackColor);
             }
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            Graphics graphics = pictureBox.CreateGraphics();
+            graphics.Clear(pictureBox.BackColor);
+            foreach (Figure figure in figureList)
+            {
+                figure.Move(pictureBox);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String s = "";
+            foreach(Figure figure in figureList)
+            {
+                s += figure.GetType().Name.ToString() + "\n";
+            }
+            MessageBox.Show(s);
         }
     }
 }

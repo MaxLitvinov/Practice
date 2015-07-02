@@ -35,10 +35,11 @@
             this.moveButton = new System.Windows.Forms.Button();
             this.figureTreeView = new System.Windows.Forms.TreeView();
             this.buttonPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.treeViewPanel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBoxPanel = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.buttonPanel.SuspendLayout();
             this.treeViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -98,6 +99,7 @@
             // 
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPanel.Controls.Add(this.button1);
             this.buttonPanel.Controls.Add(this.circleButton);
             this.buttonPanel.Controls.Add(this.moveButton);
             this.buttonPanel.Controls.Add(this.triangleButton);
@@ -106,6 +108,16 @@
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(674, 36);
             this.buttonPanel.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(576, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 29);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Info";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // treeViewPanel
             // 
@@ -141,9 +153,10 @@
             this.pictureBoxPanel.Size = new System.Drawing.Size(501, 365);
             this.pictureBoxPanel.TabIndex = 8;
             // 
-            // timer1
+            // timer
             // 
-            this.timer1.Interval = 300;
+            this.timer.Interval = 30;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // FigureMovingForm
             // 
@@ -177,7 +190,8 @@
         private System.Windows.Forms.Panel treeViewPanel;
         private System.Windows.Forms.Panel pictureBoxPanel;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button button1;
     }
 }
 

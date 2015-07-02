@@ -33,6 +33,9 @@ namespace FigureMoving.Classes
 
         public override void Move(PictureBox pictureBox)
         {
+            this.x += x;
+            this.y += y;
+            Draw(pictureBox.CreateGraphics());
         }
     }
 }
