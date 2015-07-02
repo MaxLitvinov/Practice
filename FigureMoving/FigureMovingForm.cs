@@ -27,7 +27,7 @@ namespace FigureMoving
         private void circleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure circle = new Circle();
+            Figure circle = new Circle(0, 0, 50);
             figureList.Add(circle);
             circle.Draw(graphics);
             figureTreeView.Nodes.Add(circle.GetType().Name.ToString());
@@ -36,7 +36,7 @@ namespace FigureMoving
         private void triangleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure triangle = new Triangle();
+            Figure triangle = new Triangle(0, 0, 50, 50);
             figureList.Add(triangle);
             triangle.Draw(graphics);
             figureTreeView.Nodes.Add(triangle.GetType().Name.ToString());
@@ -45,7 +45,7 @@ namespace FigureMoving
         private void rectangleButton_Click(object sender, EventArgs e)
         {
             Graphics graphics = pictureBox.CreateGraphics();
-            Figure rectangle = new Rectangle();
+            Figure rectangle = new Rectangle(0, 0, 50, 50);
             figureList.Add(rectangle);
             rectangle.Draw(graphics);
             figureTreeView.Nodes.Add(rectangle.GetType().Name.ToString());
@@ -67,7 +67,6 @@ namespace FigureMoving
             {
                 foreach (var figure in figureList)
                 {
-                    figure.Move();
                     figure.Draw(e.Graphics);
                 }
             }

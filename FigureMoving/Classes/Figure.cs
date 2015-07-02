@@ -10,14 +10,8 @@ namespace FigureMoving
 {
     abstract class Figure
     {
-        float x;
-        float y;
-        
-        public Figure(float x, float y)
-        {
-            this.x = x;
-            this.y = y;
-        }
+        public int X { get; private set; }
+        public int Y { get; private set; }
 
         public abstract void Draw(Graphics graphics);
 

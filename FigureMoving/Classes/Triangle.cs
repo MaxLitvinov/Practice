@@ -10,13 +10,29 @@ namespace FigureMoving.Classes
 {
     class Triangle : Figure
     {
-        Pen pen = new Pen(new SolidBrush(Color.Blue), 3);
-        
+        float x;
+        float y;
+        float foundation;
+        float height;
+
+        public Triangle(float x, float y, float foundation, float height)
+        {
+            this.x = x;
+            this.y = y;
+            this.foundation = foundation;
+            this.height = height;
+        }
+
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawLine(pen, 50, 0, 0, 50);
-            graphics.DrawLine(pen, 0, 50, 100, 50);
-            graphics.DrawLine(pen, 100, 50, 50, 0);
+            Pen pen = new Pen(new SolidBrush(Color.Blue), 3);
+            PointF[] points = {
+                                  new PointF(0, this.height),
+                                  new PointF(this.foundation, this.height),
+                                  new PointF(this.foundation / 2, 0),
+                                  new PointF(0, this.height)
+                              };
+            graphics.DrawLines(pen, points);
         }
 
         public override void Move(PictureBox pictureBox)

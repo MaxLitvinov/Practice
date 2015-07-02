@@ -10,20 +10,24 @@ namespace FigureMoving
 {
     class Rectangle : Figure
     {
-        Pen pen = new Pen(new SolidBrush(Color.Red), 3);
+        float x;
+        float y;
 
         public float Width { get; set; }
         public float Height { get; set; }
 
-        public Rectangle(float x, float y, float width, float height) : base(x, y)
+        public Rectangle(float x, float y, float width, float height)
         {
+            this.x = x;
+            this.y = y;
             this.Width = width;
             this.Height = height;
         }
 
         public override void Draw(Graphics graphics)
         {
-            graphics.DrawRectangle(pen, 80, 80, 200, 100);
+            Pen pen = new Pen(new SolidBrush(Color.Red), 3);
+            graphics.DrawRectangle(pen, this.x, this.y, this.Width, this.Height);
         }
 
         public override void Move(PictureBox pictureBox)
