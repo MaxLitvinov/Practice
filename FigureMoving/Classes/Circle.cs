@@ -10,19 +10,31 @@ namespace FigureMoving
 {
     class Circle : Figure
     {
-        Pen pen = new Pen(new SolidBrush(Color.Green), 3);
-        static PointF location = new PointF(100, 200);
-        static SizeF circleSize = new SizeF(35, 35);
-        RectangleF rectangleF = new RectangleF(location, circleSize);
+        static float x;
+        static float y;
+        float radius;
+
+        public Circle(float radius, float dx, float dy) : base(dx + radius, dy + radius)
+        {
+            this.radius = radius;
+        }
 
         public override void Draw(Graphics graphics)
         {
+            Pen pen = new Pen(new SolidBrush(Color.Green), 3);
+            PointF location = new PointF(x, y);
+            SizeF circleSize = new SizeF(35, 35);
+            RectangleF rectangleF = new RectangleF(location, circleSize);
             graphics.DrawEllipse(pen, rectangleF);
         }
 
-        public override void Move(int x, int y)
+        public override void Move(PictureBox pictureBox)
         {
-            
+            if (x > 0 && y > 0)
+            {
+                x += 1;
+                y += 1;
+            }
         }
     }
 }

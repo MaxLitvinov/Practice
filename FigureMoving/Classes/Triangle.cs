@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace FigureMoving.Classes
 {
@@ -18,7 +19,7 @@ namespace FigureMoving.Classes
             graphics.DrawLine(pen, 100, 50, 50, 0);
         }
 
-        public override void Move(int x, int y)
+        public override void Move(PictureBox pictureBox)
         {
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.circleButton = new System.Windows.Forms.Button();
             this.triangleButton = new System.Windows.Forms.Button();
             this.rectangleButton = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.treeViewPanel = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBoxPanel = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buttonPanel.SuspendLayout();
             this.treeViewPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -139,6 +141,10 @@
             this.pictureBoxPanel.Size = new System.Drawing.Size(501, 365);
             this.pictureBoxPanel.TabIndex = 8;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 300;
+            // 
             // FigureMovingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +176,7 @@
         private System.Windows.Forms.Panel treeViewPanel;
         private System.Windows.Forms.Panel pictureBoxPanel;
         private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
